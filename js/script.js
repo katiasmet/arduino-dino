@@ -1,20 +1,11 @@
 init = () => {
+  let $objects = Array.from(document.querySelectorAll('.object'));
 
   window.addEventListener('keydown',(e)=>{
     if (e.keyCode === 40) {
       makeError();
-    }
-
-    if (e.keyCode === 38) {
-      success1();
-    }
-
-    if (e.keyCode === 39) {
-      success2();
-    }
-
-    if (e.keyCode === 37) {
-      success3();
+    } else if (e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 37) {
+      succesHandler(e.keyCode, $objects);
     }
   });
 
@@ -25,20 +16,35 @@ makeError = () =>{
   sound.play();
 }
 
-success1 = () =>{
-  let sound = document.querySelector('.good1');
-  sound.play();
-}
+succesHandler = (platform, $objects) => {
+    let i;
 
-success2 = () =>{
-  let sound = document.querySelector('.good1');
-  sound.play();
-  console.log('tweede is goed');
-}
+    switch (platform) {
+      case 38:
+        i = 0;
+        break;
+      case 39:
+        i = 1;
+        break;
+      case 37:
+        i = 2;
+        break;
+    }
 
-success3 = () =>{
-  let sound = document.querySelector('.good1');
-  sound.play();
+    let $foundHandler = $objects[i].querySelector('.not-found');
+
+    if ($foundHandler) {
+      $foundHandler.classList.remove('not-found');
+      $foundHandler.classList.add('found');
+      $foundHandler.innerHTML = "v";
+      let sound = document.querySelector('.good1');
+      sound.play();
+    }
+
+    if ($objects[0].querySelector('.found') && $objects[1].querySelector('.found') && $objects[2].querySelector('.found')) {
+      let sound = document.querySelector('.allgood');
+      sound.play();
+    }
 }
 
 init();
