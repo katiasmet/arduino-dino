@@ -1,0 +1,80 @@
+body,
+.objects,
+.object {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #8BC34A;
+  color: white;
+  flex-direction: column;
+
+  text-align: center;
+  height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 3rem;
+  font-size: 12rem;
+
+  font-family: "JazzBall", sans-serif;
+}
+
+p {
+  margin-bottom: 5rem;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+}
+
+.object {
+  margin: 0 2.5rem;
+
+  background: #212121;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+
+  position: relative;
+}
+
+.object:before,
+.object:after {
+  content: "";
+  display: block;
+
+  position: absolute;
+  left: auto;
+  right: auto;
+  margin: auto;
+
+  background: white;
+  width: 0.5rem;
+  height: 100rem;
+  bottom: -100rem;
+}
+
+.object:after {
+  background: #212121;
+  height: 3rem;
+  width: 5rem;
+  bottom: -2rem;
+}
+
+.not-found,
+.found {
+  font-family: "JazzBall", sans-serif;
+  text-align: center;
+  color: #F44336;
+  font-size: 12rem;
+}
+
+.found {
+  color: #8BC34A;
+}

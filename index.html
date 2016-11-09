@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arduino Dino</title>
+
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+  <script type="text/javascript">
+    WebFontConfig = {
+      custom: {
+        families: ['JazzBall'],
+        urls: ['/assets/fonts/JazzBall.css']
+      }
+    };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Arduino Dino</h1>
+  </header>
+  <main>
+    <p>Haal de bizarre objecten uit de dino en leg ze op de zwarte platformen.</p>
+    <section class="objects">
+      <article class="object">
+        <div class="not-found">x</div>
+      </article>
+      <article class="object">
+        <div class="not-found">x</div>
+      </article>
+      <article class="object">
+        <div class="found">v</div>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
