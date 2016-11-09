@@ -21,19 +21,24 @@ init = () => {
 }
 
 makeError = () =>{
-  console.log('ERROR');
+  let sound = document.querySelector('.dead');
+  sound.play();
 }
 
 success1 = () =>{
-  console.log('eerste is goed');
+  let sound = document.querySelector('.good1');
+  sound.play();
 }
 
 success2 = () =>{
+  let sound = document.querySelector('.good1');
+  sound.play();
   console.log('tweede is goed');
 }
 
 success3 = () =>{
-  console.log('derde is goed');
+  let sound = document.querySelector('.good1');
+  sound.play();
 }
 
 init();
