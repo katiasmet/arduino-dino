@@ -3,7 +3,7 @@ init = () => {
 
   window.addEventListener('keydown',(e)=>{
     if (e.keyCode === 40) {
-      makeError();
+      makeError($objects);
     } else if (e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 37) {
       succesHandler(e.keyCode, $objects);
     }
@@ -11,9 +11,17 @@ init = () => {
 
 }
 
-makeError = () =>{
+makeError = (d) =>{
   let sound = document.querySelector('.dead');
   sound.play();
+  for (var i = 0; i < d.length; i++) {
+    let $foundHandler = d[i].querySelector('.found');
+    if ($foundHandler) {
+      $foundHandler.classList.remove('found');
+      $foundHandler.classList.add('not-found');
+      $foundHandler.innerHTML = "x";
+    }
+  }
 }
 
 succesHandler = (platform, $objects) => {
